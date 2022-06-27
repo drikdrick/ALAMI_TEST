@@ -15,6 +15,6 @@ Feature: Product Behaviour
     And   I can see the quantity changed to 3
     And   I click add to cart button
     And   I can see pop up modals
-    And   I click "Yes"
+    And   I click "Yes" on pop up modals
     Then  I redirected to the cart page
     And   I can see the correct product added to the cart
