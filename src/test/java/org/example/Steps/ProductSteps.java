@@ -5,9 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.CommonPage;
+import org.example.Pages.HomePage;
+import org.example.Pages.SearchPage;
+import org.junit.Assert;
 
 public class ProductSteps {
-    private CommonPage commonPage = new CommonPage();
+    private final CommonPage commonPage = new CommonPage();
+    private final HomePage homePage = new HomePage();
+    private final SearchPage searchPage = new SearchPage();
 
     @Given("I am on the elevania home page")
     public void iAmOnTheElevaniaHomePage() {
@@ -16,18 +21,24 @@ public class ProductSteps {
 
     @When("I search {string}")
     public void iSearch(String searchWord) {
+        this.homePage.searchItem(searchWord);
     }
 
     @And("I click search button")
     public void iClickSearchButton() {
+        this.homePage.clickSearchBtn();
     }
 
     @Then("I should see {string} search result")
     public void iShouldSeeSearchResult(String searchWord) {
+        Assert.assertTrue(this.searchPage.getSearchResult().contains(searchWord));
     }
 
     @When("I click {string}")
-    public void iClick(String arg0) {
+    public void iClick(String menu) {
+        if (menu.equals("Produk terlaris")) {
+            this.searchPage.clickProdukTerlarisLink();
+        }
     }
 
     @Then("Product list sorted by {string}")
@@ -36,6 +47,7 @@ public class ProductSteps {
 
     @When("I click product number {int}")
     public void iClickProductNumber(int index) {
+        this.searchPage.clickProductCard(index - 1);
     }
 
     @Then("I redirected to the right product detail page")
@@ -76,7 +88,7 @@ public class ProductSteps {
 
     @And("I close onboarding modal if exists")
     public void iCloseOnboardingModalIfExists() {
-
+        this.homePage.closePromoIfExist();
     }
 
     @And("I close the browser")
