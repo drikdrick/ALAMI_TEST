@@ -2,14 +2,25 @@ package org.example.Pages;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 public class SearchPage {
+    private WebDriver driver;
+
+    public SearchPage(WebDriver newDriver) {
+        this.driver = newDriver;
+        PageFactory.initElements(this.driver, this);
+
+    }
+
     @FindBy(xpath = "//p[@class='searchTxt']//strong")
     private WebElement searchResult;
 
@@ -28,6 +39,11 @@ public class SearchPage {
     }
 
     public void clickProductCard(int index) {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         productCard.get(index).click();
     }
 }

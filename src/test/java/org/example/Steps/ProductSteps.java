@@ -8,36 +8,39 @@ import org.example.Pages.CommonPage;
 import org.example.Pages.HomePage;
 import org.example.Pages.SearchPage;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ProductSteps {
-    private final CommonPage commonPage = new CommonPage();
-    private final HomePage homePage = new HomePage();
-    private final SearchPage searchPage = new SearchPage();
+    private WebDriver driver;
+    private CommonPage commonPage;
+    private HomePage homePage = new HomePage();
+    private SearchPage searchPage = new SearchPage();
 
     @Given("I am on the elevania home page")
     public void iAmOnTheElevaniaHomePage() {
-        this.commonPage.goToUrl("https://www.elevenia.co.id/");
+        commonPage.goToUrl("https://www.elevenia.co.id/");
     }
 
     @When("I search {string}")
     public void iSearch(String searchWord) {
-        this.homePage.searchItem(searchWord);
+        homePage.searchItem(searchWord);
     }
 
     @And("I click search button")
     public void iClickSearchButton() {
-        this.homePage.clickSearchBtn();
+        homePage.clickSearchBtn();
     }
 
     @Then("I should see {string} search result")
     public void iShouldSeeSearchResult(String searchWord) {
-        Assert.assertTrue(this.searchPage.getSearchResult().contains(searchWord));
+        Assert.assertTrue(searchPage.getSearchResult().contains(searchWord));
     }
 
     @When("I click {string}")
     public void iClick(String menu) {
         if (menu.equals("Produk terlaris")) {
-            this.searchPage.clickProdukTerlarisLink();
+            searchPage.clickProdukTerlarisLink();
         }
     }
 
@@ -47,7 +50,7 @@ public class ProductSteps {
 
     @When("I click product number {int}")
     public void iClickProductNumber(int index) {
-        this.searchPage.clickProductCard(index - 1);
+        searchPage.clickProductCard(index - 1);
     }
 
     @Then("I redirected to the right product detail page")
@@ -88,11 +91,22 @@ public class ProductSteps {
 
     @And("I close onboarding modal if exists")
     public void iCloseOnboardingModalIfExists() {
-        this.homePage.closePromoIfExist();
+        homePage.closePromoIfExist();
     }
 
     @And("I close the browser")
     public void iCloseTheBrowser() {
-        this.commonPage.closeDriver();
+        commonPage.closeDriver();
+    }
+
+    @Given("I launch chrome broswer")
+    public void iLaunchChromeBroswer() {
+        //change the driver path to your own driver path
+        String driverPath = "C:\\Users\\fedrick.siagian\\DevLand\\chromedriver_win32\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        this.driver = new ChromeDriver();
+        this.commonPage = new CommonPage(this.driver);
+        this.homePage = new HomePage(this.driver);
+        this.searchPage = new SearchPage(this.driver);
     }
 }

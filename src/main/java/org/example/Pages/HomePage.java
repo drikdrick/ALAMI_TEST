@@ -1,11 +1,20 @@
 package org.example.Pages;
 
 import lombok.NoArgsConstructor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 @NoArgsConstructor
 public class HomePage {
+    private WebDriver driver;
+
+    public HomePage(WebDriver newDriver) {
+        this.driver = newDriver;
+        PageFactory.initElements(this.driver, this);
+
+    }
     @FindBy(xpath = "//a[@class='btn-close closeBtnMainPromo']")
     private WebElement closeMainPromoBtn;
 

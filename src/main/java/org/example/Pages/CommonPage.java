@@ -3,6 +3,7 @@ package org.example.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
@@ -10,11 +11,10 @@ import java.time.Duration;
 public class CommonPage {
     private WebDriver driver;
 
-    public CommonPage() {
-        //change the driver path to your own driver path
-        String driverPath = "C:\\Users\\fedrick.siagian\\DevLand\\chromedriver_win32\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", driverPath);
-        this.driver = new ChromeDriver();
+    public CommonPage(WebDriver newDriver) {
+        this.driver = newDriver;
+        PageFactory.initElements(this.driver, this);
+
     }
 
     public WebDriver getDriver() {

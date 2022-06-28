@@ -2,7 +2,8 @@
 Feature: Product Behaviour
 
   Scenario: Verify checkout product
-    Given I am on the elevania home page
+    Given I launch chrome broswer
+    And   I am on the elevania home page
     And   I close onboarding modal if exists
     When  I search "komputer"
     And   I click search button
