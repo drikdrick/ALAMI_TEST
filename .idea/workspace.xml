@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20a6501a-f12e-489d-afac-d9be865fef05" name="Changes" comment="pom configuration">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductDetailSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/Product.feature" afterDir="false" />
+    <list default="true" id="20a6501a-f12e-489d-afac-d9be865fef05" name="Changes" comment="add product steps">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Pages/CommonPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/Product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/Product.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +44,55 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Projects/E2E-Prod/cucumber-oxford-e2e",
+    "last_opened_file_path": "D:/Projects2/ALAMI_TEST",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: Verify checkout product">
+    <configuration name="Scenario: Verify checkout product" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/Product.feature" />
+      <option name="GLUE" value="org.example.Steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="ALAMI_TEST" />
+      <option name="NAME_FILTER" value="^Verify checkout product$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify checkout product$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify checkout product" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ALAMI_TEST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TestRunner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: Verify checkout product" />
+        <item itemvalue="JUnit.TestRunner" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,7 +116,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656347200027</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add product feature file and scenario">
+      <created>1656349655523</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656349655523</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add product steps">
+      <created>1656350041456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656350041456</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +147,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="pom configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom configuration" />
+    <MESSAGE value="add product feature file and scenario" />
+    <MESSAGE value="add product steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="add product steps" />
   </component>
 </project>

@@ -3,6 +3,7 @@ Feature: Product Behaviour
 
   Scenario: Verify checkout product
     Given I am on the elevania home page
+    And   I close onboarding modal if exists
     When  I search "komputer"
     And   I click search button
     Then  I should see "komputer" search result
@@ -18,3 +19,4 @@ Feature: Product Behaviour
     And   I click "Yes" on pop up modals
     Then  I redirected to the cart page
     And   I can see the correct product added to the cart
+    And   I close the browser

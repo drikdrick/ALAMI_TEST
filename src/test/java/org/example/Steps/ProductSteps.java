@@ -4,10 +4,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Pages.CommonPage;
 
 public class ProductSteps {
+    private CommonPage commonPage = new CommonPage();
+
     @Given("I am on the elevania home page")
     public void iAmOnTheElevaniaHomePage() {
+        this.commonPage.goToUrl("https://www.elevenia.co.id/");
     }
 
     @When("I search {string}")
@@ -68,5 +72,15 @@ public class ProductSteps {
 
     @And("I click {string} on pop up modals")
     public void iClickOnPopUpModals(String choose) {
+    }
+
+    @And("I close onboarding modal if exists")
+    public void iCloseOnboardingModalIfExists() {
+
+    }
+
+    @And("I close the browser")
+    public void iCloseTheBrowser() {
+        this.commonPage.closeDriver();
     }
 }
