@@ -8,6 +8,7 @@ import org.example.Pages.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductSteps {
     private WebDriver driver;
@@ -107,6 +108,11 @@ public class ProductSteps {
 
     @And("I close the browser")
     public void iCloseTheBrowser() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         commonPage.closeDriver();
     }
 
@@ -138,9 +144,10 @@ public class ProductSteps {
         cartPage.cancelDeliveryChange();
     }
 
-    @And("I click delete product")
+    @And("I delete product")
     public void iClickDeleteProduct() {
         cartPage.deleteProduct();
+        cartPage.confirmDelete();
     }
 
     @Then("Selected product is deleted from the cart")

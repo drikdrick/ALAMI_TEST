@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 @NoArgsConstructor
 public class ProductPage {
     private WebDriver driver;
@@ -60,6 +62,8 @@ public class ProductPage {
     }
 
     public boolean isModalPopUp() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(d -> popUpModal.isDisplayed());
         return this.popUpModal.isDisplayed();
     }
 
