@@ -20,4 +20,9 @@ Feature: Product Behaviour
     And   I click "Yes" on pop up modals
     Then  I redirected to the cart page
     And   I can see the correct product added to the cart
+    When  I click change delievery option
+    Then  I can see delivery modal pops up
+    When  I cancel to change delivery option
+    And   I click delete product
+    Then  Selected product is deleted from the cart
     And   I close the browser

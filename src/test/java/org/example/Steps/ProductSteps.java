@@ -4,10 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.Pages.CommonPage;
-import org.example.Pages.HomePage;
-import org.example.Pages.ProductPage;
-import org.example.Pages.SearchPage;
+import org.example.Pages.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +15,7 @@ public class ProductSteps {
     private HomePage homePage;
     private SearchPage searchPage;
     private ProductPage productPage;
+    private CartPage cartPage;
 
     @Given("I am on the elevania home page")
     public void iAmOnTheElevaniaHomePage() {
@@ -85,6 +83,8 @@ public class ProductSteps {
 
     @Then("I redirected to the cart page")
     public void iRedirectedToTheCartPage() {
+        Assert.assertTrue(
+                driver.getCurrentUrl().contains("https://www.elevenia.co.id/cart/CartAction/getCartList.do"));
     }
 
     @And("I can see the correct product added to the cart")
@@ -93,7 +93,7 @@ public class ProductSteps {
 
     @And("I click {string} on pop up modals")
     public void iClickOnPopUpModals(String choose) {
-        if(choose.equals("Yes")) {
+        if (choose.equals("Yes")) {
             productPage.clickYesCartBtn();
         } else {
             productPage.clickNoCartBtn();
@@ -120,5 +120,30 @@ public class ProductSteps {
         this.homePage = new HomePage(this.driver);
         this.searchPage = new SearchPage(this.driver);
         this.productPage = new ProductPage(this.driver);
+        this.cartPage = new CartPage(this.driver);
+    }
+
+    @When("I click change delievery option")
+    public void iClickChangeDelieveryOption() {
+        cartPage.clickChangeDeliveryBtn();
+    }
+
+    @Then("I can see delivery modal pops up")
+    public void iCanSeeDeliveryModalPopsUp() {
+        Assert.assertTrue(cartPage.isDeliveryModalDisplayed());
+    }
+
+    @When("I cancel to change delivery option")
+    public void iCancelToChangeDeliveryOption() {
+        cartPage.cancelDeliveryChange();
+    }
+
+    @And("I click delete product")
+    public void iClickDeleteProduct() {
+        cartPage.deleteProduct();
+    }
+
+    @Then("Selected product is deleted from the cart")
+    public void selectedProductIsDeletedFromTheCart() {
     }
 }
