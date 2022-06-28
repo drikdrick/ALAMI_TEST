@@ -2,6 +2,7 @@ package org.example.Pages;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.Utilities.ProductData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 public class SearchPage {
     private WebDriver driver;
+
+    private ProductData productData;
 
     public SearchPage(WebDriver newDriver) {
         this.driver = newDriver;
@@ -30,6 +33,9 @@ public class SearchPage {
     @FindBy(xpath = "//li[@class='itemList']/div[@class='group']/a")
     private List<WebElement> productCard;
 
+    @FindBy(xpath = "//div[@class='group']//strong")
+    private List<WebElement> productPrice;
+
     public String getSearchResult() {
         return searchResult.getText();
     }
@@ -44,6 +50,8 @@ public class SearchPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        productData.setProductName(productCard.get(index).getText());
+        productData.setProductPrice(productPrice.get(index).getText());
         productCard.get(index).click();
     }
 }
