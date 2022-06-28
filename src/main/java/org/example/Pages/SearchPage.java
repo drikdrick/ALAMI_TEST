@@ -50,8 +50,8 @@ public class SearchPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        productData.setProductName(productCard.get(index).getText());
-        productData.setProductPrice(productPrice.get(index).getText());
+//        productData.setProductName(productCard.get(index+1).getText());
+//        productData.setProductPrice(productPrice.get(index).getText());
         productCard.get(index).click();
     }
 }
