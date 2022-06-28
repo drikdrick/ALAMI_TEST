@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20a6501a-f12e-489d-afac-d9be865fef05" name="Changes" comment="add driver">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Pages/SearchPage.java" afterDir="false" />
+    <list default="true" id="20a6501a-f12e-489d-afac-d9be865fef05" name="Changes" comment="delete product step">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Utilities/ProductData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pages/SearchPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +135,42 @@
       <option name="project" value="LOCAL" />
       <updated>1656422580162</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="search page and home page">
+      <created>1656423920186</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656423920186</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add step">
+      <created>1656428476816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656428476816</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add product step">
+      <created>1656429034044</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656429034044</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add step in cart page">
+      <created>1656429883020</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656429883020</updated>
+    </task>
+    <task id="LOCAL-00010" summary="delete product step">
+      <created>1656431566531</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656431566531</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +190,11 @@
     <MESSAGE value="add product feature file and scenario" />
     <MESSAGE value="add product steps" />
     <MESSAGE value="add driver" />
-    <option name="LAST_COMMIT_MESSAGE" value="add driver" />
+    <MESSAGE value="search page and home page" />
+    <MESSAGE value="add step" />
+    <MESSAGE value="add product step" />
+    <MESSAGE value="add step in cart page" />
+    <MESSAGE value="delete product step" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete product step" />
   </component>
 </project>
