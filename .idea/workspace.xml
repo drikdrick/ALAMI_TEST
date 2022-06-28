@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20a6501a-f12e-489d-afac-d9be865fef05" name="Changes" comment="misc file">
+    <list default="true" id="20a6501a-f12e-489d-afac-d9be865fef05" name="Changes" comment="stabilize step">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pages/SearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Steps/ProductSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656432431597</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="stabilize step">
+      <created>1656432854428</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1656432854428</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +217,7 @@
     <MESSAGE value="add step in cart page" />
     <MESSAGE value="delete product step" />
     <MESSAGE value="misc file" />
-    <option name="LAST_COMMIT_MESSAGE" value="misc file" />
+    <MESSAGE value="stabilize step" />
+    <option name="LAST_COMMIT_MESSAGE" value="stabilize step" />
   </component>
 </project>

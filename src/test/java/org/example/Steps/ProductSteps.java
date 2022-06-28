@@ -108,11 +108,6 @@ public class ProductSteps {
 
     @And("I close the browser")
     public void iCloseTheBrowser() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         commonPage.closeDriver();
     }
 
@@ -141,11 +136,6 @@ public class ProductSteps {
 
     @When("I cancel to change delivery option")
     public void iCancelToChangeDeliveryOption() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         cartPage.cancelDeliveryChange();
     }
 

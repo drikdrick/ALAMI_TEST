@@ -41,6 +41,11 @@ public class CartPage {
 
     public void clickChangeDeliveryBtn() {
         changeDeliveryBtn.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean isDeliveryModalDisplayed() {
@@ -55,10 +60,25 @@ public class CartPage {
     }
 
     public void deleteProduct() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         deleteProductBtn.click();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void confirmDelete(){
         confirmDeleteProductBtn.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
