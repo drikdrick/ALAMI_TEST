@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.CommonPage;
 import org.example.Pages.HomePage;
+import org.example.Pages.ProductPage;
 import org.example.Pages.SearchPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -14,8 +15,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ProductSteps {
     private WebDriver driver;
     private CommonPage commonPage;
-    private HomePage homePage = new HomePage();
-    private SearchPage searchPage = new SearchPage();
+    private HomePage homePage;
+    private SearchPage searchPage;
+    private ProductPage productPage;
 
     @Given("I am on the elevania home page")
     public void iAmOnTheElevaniaHomePage() {
@@ -59,10 +61,12 @@ public class ProductSteps {
 
     @And("I can see other products from the seller")
     public void iCanSeeOtherProductsFromTheSeller() {
+        Assert.assertTrue(productPage.isOtherProductExist());
     }
 
     @When("I add the quantity of the product {int} time(s)")
     public void iAddTheQuantityOfTheProductTimes(int total) {
+        productPage.addProductQty(total);
     }
 
     @And("I can see the quantity changed to {int}")
@@ -71,10 +75,12 @@ public class ProductSteps {
 
     @And("I click add to cart button")
     public void iClickAddToCartButton() {
+        productPage.clickAddToCart();
     }
 
     @And("I can see pop up modals")
     public void iCanSeePopUpModals() {
+        Assert.assertTrue(productPage.isModalPopUp());
     }
 
     @Then("I redirected to the cart page")
@@ -87,6 +93,11 @@ public class ProductSteps {
 
     @And("I click {string} on pop up modals")
     public void iClickOnPopUpModals(String choose) {
+        if(choose.equals("Yes")) {
+            productPage.clickYesCartBtn();
+        } else {
+            productPage.clickNoCartBtn();
+        }
     }
 
     @And("I close onboarding modal if exists")
@@ -108,5 +119,6 @@ public class ProductSteps {
         this.commonPage = new CommonPage(this.driver);
         this.homePage = new HomePage(this.driver);
         this.searchPage = new SearchPage(this.driver);
+        this.productPage = new ProductPage(this.driver);
     }
 }
