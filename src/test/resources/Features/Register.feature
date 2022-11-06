@@ -10,5 +10,4 @@ Feature: Register New User
     And I fill in "lastName" with "random"
     And I fill in "cityAndProvince" with "random"
     And I press register button
-    Then I should be on the "Verification" page
     And   I close the browser
